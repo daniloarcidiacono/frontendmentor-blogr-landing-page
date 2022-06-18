@@ -1,0 +1,179 @@
+/* From https://github.com/hankchizljaw/modern-css-reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  --clr-primary-light-red: hsl(356deg, 100%, 66%);
+  --clr-primary-very-light-red: hsl(355deg, 100%, 74%);
+  --clr-primary-very-dark-blue: hsl(208deg, 49%, 24%);
+  --clr-neutral-white: hsl(0deg, 0%, 100%);
+  --clr-neutral-grayish-blue: hsl(240deg, 2%, 79%);
+  --clr-neutral-very-dark-grayish-blue: hsl(207deg, 13%, 34%);
+  --clr-neutral-very-dark-black-blue: hsl(240deg, 10%, 16%);
+  --clr-gradient-very-light-red: hsl(13deg, 100%, 72%);
+  --clr-gradient-light-red: hsl(353deg, 100%, 62%);
+  --clr-gradient-very-dark-gray-blue: hsl(237deg, 17%, 21%);
+  --clr-gradient-very-dark-desaturated-blue: hsl(237deg, 23%, 32%);
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+@font-face {
+  font-family: Overpass;
+  src: url("../assets/fonts/Overpass/Overpass-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: Overpass;
+  src: url("../assets/fonts/Overpass/Overpass-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: Ubuntu;
+  src: url("../assets/fonts/Ubuntu/Ubuntu-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: Ubuntu;
+  src: url("../assets/fonts/Ubuntu/Ubuntu-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: Ubuntu;
+  src: url("../assets/fonts/Ubuntu/Ubuntu-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+body {
+  font-family: League Spartan;
+  font-weight: var(--font-weight-normal);
+  font-size: 0.9375rem;
+}
+
+html.desktop {
+  width: 1440px;
+  height: 3394px;
+}
+html.desktop .design {
+  width: 1440px;
+  height: 3394px;
+  max-width: unset;
+  content: url("../assets/design/desktop-design.jpg");
+}
+html.desktop body {
+  width: 1440px;
+  height: 3394px;
+  min-height: initial;
+}
+
+html.mobile {
+  width: 375px;
+  height: 4689px;
+}
+html.mobile .design {
+  width: 375px;
+  height: 4689px;
+  max-width: unset;
+  content: url("../assets/design/mobile-design.jpg");
+}
+html.mobile body {
+  width: 375px;
+  height: 4689px;
+  min-height: initial;
+}
+
+.design {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  outline: 1px solid black;
+  z-index: 255;
+}
+
+.attribution {
+  margin-block: 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.attribution a {
+  color: var(--clr-primary-light-red);
+}
+
+a[target=_blank]::after {
+  margin: 0 3px 0 5px;
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+}

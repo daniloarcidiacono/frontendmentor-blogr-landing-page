@@ -1,0 +1,46 @@
+// Overpass font
+@font-face {
+    font-family: Overpass;
+    src: url('../assets/fonts/Overpass/Overpass-Light.ttf') format('truetype');
+
+    // CSS custom properties do not work on @font-face rules!
+    // See https://stackoverflow.com/questions/58752373/custom-css-properties-in-font-face
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Overpass;
+    src: url('../assets/fonts/Overpass/Overpass-SemiBold.ttf') format('truetype');
+
+    // CSS custom properties do not work on @font-face rules!
+    // See https://stackoverflow.com/questions/58752373/custom-css-properties-in-font-face
+    font-weight: 600;
+}
+
+// Ubuntu font
+@font-face {
+    font-family: Ubuntu;
+    src: url('../assets/fonts/Ubuntu/Ubuntu-Regular.ttf') format('truetype');
+
+    // CSS custom properties do not work on @font-face rules!
+    // See https://stackoverflow.com/questions/58752373/custom-css-properties-in-font-face
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url('../assets/fonts/Ubuntu/Ubuntu-Medium.ttf') format('truetype');
+
+    // CSS custom properties do not work on @font-face rules!
+    // See https://stackoverflow.com/questions/58752373/custom-css-properties-in-font-face
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url('../assets/fonts/Ubuntu/Ubuntu-Bold.ttf') format('truetype');
+
+    // CSS custom properties do not work on @font-face rules!
+    // See https://stackoverflow.com/questions/58752373/custom-css-properties-in-font-face
+    font-weight: bold;
+}

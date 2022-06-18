@@ -1,0 +1,33 @@
+@mixin design($variant, $width, $height, $url) {
+    html.#{$variant} {
+        width: $width;
+        height: $height;
+
+        .design {
+            width: $width;
+            height: $height;
+            max-width: unset;
+
+            content: url($url);
+        }
+
+        body {
+            width: $width;
+            height: $height;
+            min-height: initial;
+        }
+    }
+}
+
+@include design(desktop, 1440px, 3394px, '../assets/design/desktop-design.jpg');
+@include design(mobile, 375px, 4689px, '../assets/design/mobile-design.jpg');
+
+.design {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    display: block;
+    outline: 1px solid black;
+    z-index: 255;
+}
