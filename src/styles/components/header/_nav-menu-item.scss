@@ -1,0 +1,159 @@
+@use '../../../styles/abstracts/mixins' as *;
+
+.nav-menu-item {
+    $title-arrow-animation-duration: 125ms;
+    $subitems-animation-duration: 450ms;
+    width: 100%;
+    
+    &__title-wrapper {
+        text-align: center;
+    }
+
+    &__title {
+        display: inline-flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        user-select: none;        
+
+        &::after {
+            content: " ";
+            display: inline-block;
+            width: 10px;
+            height: 7px;
+            background: url('/assets/images/icon-arrow-dark.svg') center center / auto no-repeat;
+            transition: transform $title-arrow-animation-duration linear;
+        }
+    }
+
+    &__subitems {
+        list-style: none;
+        overflow: hidden;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: stretch;
+        border-radius: 6px;
+        max-height: 0px;
+        font-size: 1rem;
+        font-weight: var(--font-weight-semibold);
+        text-align: center;
+        color: var(--clr-neutral-very-dark-grayish-blue);
+        background: var(--clr-neutral-light-grayish-blue);
+        transition: max-height $subitems-animation-duration ease,
+                    padding $subitems-animation-duration ease,
+                    margin-block $subitems-animation-duration ease;
+    }
+
+    &__subitem {
+        cursor: pointer;
+        line-height: 2.5rem;
+        border-radius: 6px;
+
+        &:hover {
+            font-weight: var(--font-weight-semibold);
+            // background: var(--clr-neutral-grayish-blue);
+        }
+    }
+
+    &__checkbox {
+        display: none;
+
+        &:checked {
+            :where(& + .nav-menu-item__title-wrapper) > .nav-menu-item__title::after {
+                transform: rotate(180deg);
+            }
+
+            :where(&) ~ .nav-menu-item__subitems {
+                padding: 1rem;
+                margin-block-start: 1.4rem;
+                max-height: 15rem;
+            }
+        }
+    }
+}
+
+@include device(medium) {
+    .nav-menu-item {
+        width: auto;
+        
+        // Disable accordion expansion on click
+        &__checkbox {
+            &:checked {
+                :where(& + .nav-menu-item__title-wrapper) > .nav-menu-item__title::after {
+                    transform: none;
+                }
+    
+                :where(&) ~ .nav-menu-item__subitems {
+                    display: none;
+                }
+            }
+        }
+
+        &__title {
+            // Expand the hoverable area of the title in order to "touch" the subitems top            
+            padding-block: 1.4rem;
+            font-size: 1rem;
+            color: var(--clr-neutral-light-grayish-blue);
+
+            &:hover {
+                color: var(--clr-neutral-white);
+            }
+
+            &::after {
+                background-image: url('/assets/images/icon-arrow-light.svg');
+            }        
+        }
+
+        &__subitems {
+            // "Float" the subitems
+            position: absolute;
+
+            // Keep display to flex but hide it with visibility hidden
+            // (plays nice with transitions unlike display: none)
+            display: flex;
+            visibility: hidden;
+            opacity: 0;            
+            padding-inline: 1rem;    
+            padding-block: 1.7rem;
+            margin-block-start: 0;
+            margin-inline-start: -1.5rem;
+            min-width: 16.5ch;
+            max-height: initial;
+            text-align: start;
+            font-weight: var(--font-weight-light);
+            color: var(--clr-neutral-very-dark-black-blue);
+            background: var(--clr-neutral-white);
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+            transition: opacity 125ms linear;
+        }
+
+        &__subitem {
+            padding-inline: 0.5rem;            
+            line-height: 2rem;
+
+            // &:hover {
+            //     background: initial;
+            // }
+        }
+
+        // Expand accordion on hover
+        &:hover {
+            .nav-menu-item__title {
+                text-decoration: underline;
+                text-decoration-skip-ink: none;
+                text-decoration-thickness: 2px;
+    
+                &::after {
+                    transform: rotate(180deg);
+                }
+            }
+        
+            .nav-menu-item__subitems {
+                visibility: visible;
+                opacity: 1;
+            }
+        }        
+    }
+}

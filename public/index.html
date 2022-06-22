@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="mobile">
+<html lang="en" class="mobile-menu">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
@@ -10,27 +10,64 @@
 </head>
 <body>
 	<img class="design" alt="Design" title="Press CTRL+D to toggle">
-	<header>
-		Product
+
+	<!-- Header component -->
+	<header class="header">
+		<!-- Nav component -->
+		<nav class="nav">
+			<img class="nav__logo" src="assets/images/logo.svg" alt="Blogr Logo"></img>
+			<input class="nav__drawer-icon" type="checkbox"></input>
+			<div class="nav__drawer">
+				<ul class="nav__menu">
+					<!-- NavMenuItem component -->
+					<li class="nav-menu-item">
+						<input class="nav-menu-item__checkbox" id="chkProducts" type="radio" name="menu-item"></input>
+						<div class="nav-menu-item__title-wrapper">
+							<label class="nav-menu-item__title" for="chkProducts">Product</label>
+						</div>
+						<ul class="nav-menu-item__subitems">
+							<li class="nav-menu-item__subitem">Overview</li>
+							<li class="nav-menu-item__subitem">Pricing</li>
+							<li class="nav-menu-item__subitem">Marketplace</li>
+							<li class="nav-menu-item__subitem">Features</li>
+							<li class="nav-menu-item__subitem">Integrations</li>
+						</ul>
+					</li>
+
+					<!-- NavMenuItem component -->
+					<li class="nav-menu-item">
+						<input class="nav-menu-item__checkbox" id="chkCompany" type="radio" name="menu-item"></input>
+						<div class="nav-menu-item__title-wrapper">
+							<label class="nav-menu-item__title" for="chkCompany">Company</label>
+						</div>
+						<ul class="nav-menu-item__subitems">
+							<li class="nav-menu-item__subitem">About</li>
+							<li class="nav-menu-item__subitem">Team</li>
+							<li class="nav-menu-item__subitem">Blog</li>
+							<li class="nav-menu-item__subitem">Careers</li>
+						</ul>
+					</li>
+
+					<!-- NavMenuItem component -->
+					<li class="nav-menu-item">
+						<input class="nav-menu-item__checkbox" id="chkConnect" type="radio" name="menu-item"></input>
+						<div class="nav-menu-item__title-wrapper">
+							<label class="nav-menu-item__title" for="chkConnect">Connect</label>
+						</div>
+						<ul class="nav-menu-item__subitems">
+							<li class="nav-menu-item__subitem">Contact</li>
+							<li class="nav-menu-item__subitem">Newsletter</li>
+							<li class="nav-menu-item__subitem">LinkedIn</li>
+						</ul>
+					</li>
+				</ul>
+				<hr class="nav__separator" />
+				<!-- <button>Login</button>
+				<button>Sign Up</button> -->
+			</div>				
+		</nav>
 		
-		Overview
-		Pricing
-		Marketplace
-		Features
-		Integrations
-		
-		Company
-		
-		About
-		Team
-		Blog
-		Careers
-		
-		Connect
-		
-		Contact
-		Newsletter
-		LinkedIn
+		<!-- 
 		
 		Login
 		Sign Up
@@ -39,7 +76,7 @@
 		Grow your audience and build your online brand
 		
 		Start for Free
-		Learn More
+		Learn More -->
 	</header>
 	<main>		
 		Designed for the future

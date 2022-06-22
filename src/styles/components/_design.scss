@@ -20,7 +20,9 @@
 }
 
 @include design(desktop, 1440px, 3394px, '../assets/design/desktop-design.jpg');
+@include design(active-states, 1440px, 3394px, '../assets/design/active-states.jpg');
 @include design(mobile, 375px, 4689px, '../assets/design/mobile-design.jpg');
+@include design(mobile-menu, 375px, 667px, '../assets/design/mobile-menu.jpg');
 
 .design {
     position: absolute;
@@ -28,6 +30,6 @@
     left: 0;
     
     display: block;
-    outline: 1px solid black;
+    // outline: 1px solid black;
     z-index: 255;
 }

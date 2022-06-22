@@ -1,0 +1,21 @@
+@use '../../../styles/abstracts/mixins' as *;
+
+.header {
+    padding: 3.5rem 1.5rem;
+    height: 600px;
+    border-bottom-left-radius: 100px;
+
+    // background: <color> <image> <position> / <size=auto|cover|contain> <repeat=no-repeat|...> <origin=border-box|...> <clip=border-box|...>
+    background: url('/assets/images/bg-pattern-intro-mobile.svg') left 35.4% bottom 66.2% / auto no-repeat,
+                linear-gradient(135deg, var(--clr-gradient-very-light-red), var(--clr-gradient-light-red));
+}
+
+@include device(medium) {
+    .header {
+        padding-inline: 160px;
+
+        // background: <color> <image> <position> / <size=auto|cover|contain> <repeat=no-repeat|...> <origin=border-box|...> <clip=border-box|...>
+        background: url('/assets/images/bg-pattern-intro-desktop.svg') left 25.3% bottom 47.85% / auto no-repeat,
+                    linear-gradient(135deg, var(--clr-gradient-very-light-red), var(--clr-gradient-light-red));
+    }
+}
